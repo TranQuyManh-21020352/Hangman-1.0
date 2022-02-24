@@ -87,64 +87,94 @@ string chooseWord()
     int randomIndex = rand() % Word_Count;
     return Word_List[randomIndex];
 }
-const string FIXGURE[] ={
-                    "  ------------- \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "----- \n",
-                    "  ------------- \n"
-                    "  |           | \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "----- \n",
-                    "  ------------- \n"
-                    "  |           | \n"
-                    "  |           O \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "----- \n",
-                    "  ------------- \n"
-                    "  |           | \n"
-                    "  |           O \n"
-                    "  |           | \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "----- \n",
-                    "  ------------- \n"
-                    "  |           | \n"
-                    "  |           O \n"
-                    "  |          /| \n"
-                    "  |             \n"
-                    "  |             \n"
-                    "----- \n",
-                    "  ------------- \n"
-                    "  |           | \n"
-                    "  |           O \n"
-                    "  |          /|\\\n"
-                    "  |             \n"
-                    "  |             \n"
-                    "----- \n",
-                    "  ------------- \n"
-                    "  |           | \n"
-                    "  |           O \n"
-                    "  |          /|\\\n"
-                    "  |          /  \n"
-                    "  |             \n"
-                    "----- \n",
-                    "  ------------- \n"
-                    "  |           | \n"
-                    "  |           O \n"
-                    "  |          /|\\\n"
-                    "  |          / \\\n"
-                    "  |             \n"
-                    "----- \n"
-                    };
+const string FIXGURE[] ={" _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n",
+                            " _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |             |     |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n",
+                            " _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |             |     |\n"
+                            "|   |             O     |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n",
+                            " _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |             |     |\n"
+                            "|   |             O     |\n"
+                            "|   |             |     |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n",
+                            " _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |             |     |\n"
+                            "|   |             O     |\n"
+                            "|   |            /|     |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n",
+                            " _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |             |     |\n"
+                            "|   |             O     |\n"
+                            "|   |            /|\\    |\n"
+                            "|   |                   |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n",
+                            " _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |             |     |\n"
+                            "|   |             O     |\n"
+                            "|   |            /|\\    |\n"
+                            "|   |            /      |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n",
+                            " _______________________\n"
+                            "|                       |\n"
+                            "|   ---------------     |\n"
+                            "|   |             |     |\n"
+                            "|   |             O     |\n"
+                            "|   |            /|\\    |\n"
+                            "|   |            / \\    |\n"
+                            "|   |                   |\n"
+                            "| -----                 |\n"
+                            "|                       |\n"
+                            "|_______________________|\n"};
 void renderGame(string guessedWord, int badGuessCount,string yourGuessedWord)
 {
     cout<<FIXGURE[badGuessCount]<<endl<<endl;
@@ -163,7 +193,6 @@ int main()
             const int Max_Bad_Guess = 7;
             string secretWord,guessedWord = "";
             secretWord = chooseWord();
-            cout<<secretWord<<endl;
             char guess;
      for(int i = 0; i < secretWord.size(); i++)
      {
@@ -180,7 +209,6 @@ int main()
                  guess = checkedGuess(yourGuessedWord,guess);
                  yourGuessedWord = yourguessedword(yourGuessedWord, guess);
              }
-             cout<<"guess: "<<guess<<endl;
         if(contains(secretWord,guess) == true)
         {
            guessedWord = update(guessedWord,guess,secretWord);
@@ -212,7 +240,7 @@ int main()
       if(badGuessCount == Max_Bad_Guess && secretWord != guessedWord)
      {
          renderGame(guessedWord,badGuessCount,yourGuessedWord);
-         cout<<endl<<"You lose. The corect word is: "<<secretWord<<endl;
+         cout<<endl<<"You lose! The corect word is: "<<secretWord<<endl;
          cout<<endl;
          cout<<"Do you want to continue playing? : "<<endl;
          cout<<"your Answer: ";
